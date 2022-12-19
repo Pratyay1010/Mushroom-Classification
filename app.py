@@ -2,7 +2,6 @@ import streamlit as st
 import pickle
 
 data = pickle.load(open("./Pickle Files/dataset.pkl","rb"))
-model = pickle.load(open("./Pickle Files/model.pkl","rb"))
 
 x=[]
 j=0
