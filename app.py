@@ -1,20 +1,20 @@
 import streamlit as st
+from tensorflow.keras.models import load_model
 import pickle
 
-data = pickle.load(open("./Pickle Files/dataset.pkl","rb"))
+data = pickle.load(open("./Pickle Files/dataset.pkl", "rb"))
+model = load_model('./Pickle Files/model.h5')
 
-x=[]
-j=0
+x = []
+j = 0
 for i in data.keys():
-    if j!=0:
+    if j != 0:
         x.append(i)
-    j+=1
-
-
+    j += 1
 
 st.title("Mushroom Classification System")
 
-options=[]
+options = []
 for i in x:
     options.append(st.selectbox(i, (tuple(data[i]))))
 
